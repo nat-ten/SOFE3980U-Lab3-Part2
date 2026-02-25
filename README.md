@@ -43,8 +43,6 @@
    8. Access Jenkins server using the following URL http://\<jenkinsIP\>:8080. Where \<jenkinsIP\> is the IP obtained in the previous step. It should look like
 
       ![sq4_2](figures/sq4_2.jpg)
-    
-      To fix a connection issue, click Manage Jenkins, select Security, and check Enable proxy compatibility under CSRF Protection. Click the save button. (Note: the connection issue won't be fixed until the configuration is saved. You may need to repeat this step until the configuration is saved) 
 
    9. To fix a connection issue, click **Manage Jenkins**, select **Security**,and check **Enable proxy compatibility** under **CSRF Protection**. Click the **save** button. (Note: the connection issue won’t be fixed until the configuration is saved. You may need to repeat this step until the configuration is saved)
    
