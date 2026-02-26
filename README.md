@@ -139,9 +139,8 @@ The Other way is to create a customized job by providing a script (**Jenkinsfile
     * The third stage, **build**, builds the project defined at the path **./BinaryCalculatorWebapp/**.
     * The last stage, **Deploy**, is a dummy stage that only displays a string
 3.	Go to Jenkins' **Dashboard**. Click **New Item**. Name it **BinaryCalculator_pipeline**. Choose the type to be **Pipeline**.
-4.	In the configuration page,
-   1. In the **Triggers** section, check **GitHub hook trigger for GITScm polling**.
-   2. In the **Pipeline** section, 
+4. In the **Triggers** section, check **GitHub hook trigger for GITScm polling**.
+5. In the **Pipeline** section, 
       * Set the **Definition** to **Pipeline script from SCM**.
       * Set the **SCM** to **Git**
       * Set the **Repository URL** to your GitHub link.
