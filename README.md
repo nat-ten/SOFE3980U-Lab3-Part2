@@ -232,17 +232,15 @@ Search up **Cloud Build API** in GCP and enable the API.
 
 ### 5. Give Artifact Registry Writer Permission
 
-Navigate to **IAM & Admin → IAM** in the Google Cloud Console.
+- Navigate to **IAM & Admin → IAM** in the Google Cloud Console.
 
-Locate the Compute Engine default service account:
+- Locate the Compute Engine default service account:
+   `PROJECT_NUMBER-compute@developer.gserviceaccount.com`
 
-`PROJECT_NUMBER-compute@developer.gserviceaccount.com`
+- Click **Edit** and grant it the following role:
+   `Artifact Registry Writer`
 
-Click **Edit** and grant it the following role:
-
-`Artifact Registry Writer`
-
-Click **Save**.
+- Click **Save**.
 
 
 ### 6. Create Jenkins Job 
