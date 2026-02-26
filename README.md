@@ -228,9 +228,24 @@ The information obtained in the previous subsection will be saved in Jenkins as 
 10. Add another credential with the Kind **Secret Text**. Set the **ID** field to **cluster_zone** and the **Secret** field to the GKE cluster location obtained in the previous subsection.
 
 ### 4. Enable API
-Search up **Cloud Build API** in the search bar and enable the API.
+Search up **Cloud Build API** in GCP and enable the API.
 
-### 5. Create Jenkins Job 
+### 5. Give Artifact Registry Writer Permission
+
+Navigate to **IAM & Admin → IAM** in the Google Cloud Console.
+
+Locate the Compute Engine default service account:
+
+`PROJECT_NUMBER-compute@developer.gserviceaccount.com`
+
+Click **Edit** and grant it the following role:
+
+`Artifact Registry Writer`
+
+Click **Save**.
+
+
+### 6. Create Jenkins Job 
 1. Read the file [/BinaryCalculatorWebapp/Jenkinsfile_v2](/BinaryCalculatorWebapp/Jenkinsfile_v2)
     * It reads the secret files and text and sets them as environment variables.
     * It creates an agent as a Kubernetes pod that creates a container, namely **gcloud**, from the image **google/cloud-sdk:latest**. It includes a Google Cloud SDK with the gcloud CLI.
