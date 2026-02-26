@@ -206,12 +206,13 @@ We will start by creating a service account. It permits dealing with the **Artif
     ```
     These commands will create a service account, grant it three roles, and generate a JSON key file in the home directory.
 2.  Download the **service_account.json** file from the home directory of the GCP console to your computer.
-3.  Print the GCP project name, copy it, and save it.
+3.  The next three steps require copying necessary values that will be used in Jenkins. Open a text file.
+4.  Print the GCP project name, copy it, and paste it in the text file.
     ``` cmd
     echo $GOOGLE_CLOUD_PROJECT
     ```
-4. Navigate to the **Artifact Registry**, copy the full path of the repository created before, and save it.
-5.  Navigate to the **Clusters** in **Kubernetes Engine**, copy the cluster Name and location, and save them.
+5. Navigate to the **Artifact Registry**, copy the full path of the repository created before, and paste it in the text file.
+6.  Navigate to the **Clusters** in **Kubernetes Engine**, copy the cluster Name and location,and paste it in the text file.
 
 ### 3. Save the Important Information in Jenkins
 The information obtained in the previous subsection will be saved in Jenkins as secret text and files for security reasons. 
