@@ -48,4 +48,53 @@ public class BinaryAPIControllerTest {
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10001))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
     }
+	
+	//NEW TESTS
+	@Test
+    public void or() throws Exception {
+        this.mvc.perform(get("/or").param("operand1","1110").param("operand2","1010"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("1110"));
+    }
+	@Test
+    public void or2() throws Exception {
+        this.mvc.perform(get("/or_json").param("operand1","1110").param("operand2","1010"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(1110))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(1110))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("or"));
+    }
+	
+	@Test
+    public void and() throws Exception {
+        this.mvc.perform(get("/and").param("operand1","1110").param("operand2","1010"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("1010"));
+    }
+	@Test
+    public void and2() throws Exception {
+        this.mvc.perform(get("/and_json").param("operand1","1110").param("operand2","1010"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(1110))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(1010))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("and"));
+    }
+	
+	@Test
+    public void mul() throws Exception {
+        this.mvc.perform(get("/mul").param("operand1","1110").param("operand2","1010"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("10001100"));
+    }
+	@Test
+    public void mul2() throws Exception {
+        this.mvc.perform(get("/mul_json").param("operand1","1110").param("operand2","1010"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(1110))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10001100))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("multiply"));
+    }
 }
